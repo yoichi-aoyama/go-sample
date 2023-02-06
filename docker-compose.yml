@@ -11,4 +11,8 @@ services:
     tty: true
     environment:
       - TZ=Asia/Tokyo
+  go-deploy:
+    image: fluent/fluentd:v1.15
+    volumes:
+      - ./dist:/go
 
