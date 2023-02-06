@@ -7,6 +7,9 @@ import (
 	"time"
 )
 
+/*
+"github.com/olivere/jobqueue" example
+*/
 func main() {
 
 	store, err := mysql.NewStore("root@tcp(127.0.0.1:3306)/jobqueue_e2e?loc=UTC&parseTime=true")
