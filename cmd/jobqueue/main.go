@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"github.com/olivere/jobqueue"
 	"github.com/olivere/jobqueue/mysql"
 	"time"
@@ -32,7 +33,7 @@ func main() {
 	}
 
 	// Add a job: It'll be added to the store and processed eventually.
-	err = m.Add(&jobqueue.Add{Topic: "clicks", Args: []interface{}{640, 480}})
+	err = m.Add(context.Background(), &jobqueue.Job{Topic: "clicks", Args: []interface{}{640, 480}})
 	if err != nil {
 		panic(err)
 	}
